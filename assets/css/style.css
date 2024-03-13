@@ -41,3 +41,7 @@ button{
     width: 60%;
     margin: 0 auto;
 }
+
+#error{
+    margin-left: 0.5rem;
+}

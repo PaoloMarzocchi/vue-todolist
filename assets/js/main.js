@@ -30,8 +30,9 @@ createApp({
         }
     },
     methods: {
-        removeTodo(index){
-            this.todoList.splice(index,1);
+        removeTodo(item){
+            const itemIndex = this.todoList.indexOf(item);
+            this.todoList.splice(itemIndex,1);
         },
 
         addItem(){
@@ -41,15 +42,12 @@ createApp({
                     done: false
                 }
                 this.todoList.unshift(newItem);
-                console.log(this);
+                
                 this.addedItem = '';
                 this.errorMessage = '';
             }else{
                 this.errorMessage = 'Error! Digita almeno 3 caratteri'
             }
         }
-    },
-    mounted(){
-        
     }
 }).mount('#app')

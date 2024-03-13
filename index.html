@@ -16,11 +16,11 @@
         <h1>Todo list:</h1>
         <input type="text" name="add-item" id="add-item" v-model.trim="addedItem" @keyup.enter="addItem()">
         <button @click="addItem()">Add to list</button>
-        <span v-if="errorMessage" style="color: darkred;">{{errorMessage}}</span>
+        <span v-if="errorMessage" style="color: darkred;" id="error">{{errorMessage}}</span>
         <ul>
-            <li :class="todo.done ? 'checked' : ''" v-for="(todo,index) in todoList" @click="todo.done = !todo.done">
-                <i class="fa-solid fa-circle-xmark" @click="removeTodo(index)"></i>
-                {{todo.text}}
+            <li :class="todo.done ? 'checked' : ''" v-for="(todo,index) in todoList" >
+                <i class="fa-solid fa-circle-xmark" @click="removeTodo(todo)"></i>
+                <span @click="todo.done = !todo.done">{{todo.text}}</span>
             </li>
         </ul>
     </div>
