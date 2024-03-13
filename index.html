@@ -18,9 +18,9 @@
         <button @click="addItem()">Add to list</button>
         <span v-if="errorMessage" style="color: darkred;">{{errorMessage}}</span>
         <ul>
-            <li :class="todo.done ? 'checked' : ''" v-for="(todo,index) in todoList" @click="todo.done = !todo.done">{{todo.text}}
+            <li :class="todo.done ? 'checked' : ''" v-for="(todo,index) in todoList" @click="todo.done = !todo.done">
                 <i class="fa-solid fa-circle-xmark" @click="removeTodo(index)"></i>
-                
+                {{todo.text}}
             </li>
         </ul>
     </div>

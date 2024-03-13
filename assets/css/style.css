@@ -4,18 +4,31 @@
     box-sizing: border-box;
 }
 
+/* Common */
 h1{
     margin: 0.5rem 0;
 }
 
 li{
-    margin: 0.5rem 0;
+    margin: 0.5rem 0.8rem;
     cursor: pointer;
+    list-style: none;
+    width: fit-content;
+
 }
 
 i{
-    margin-left: 0.5rem;
+    margin-right: 0.5rem;
     cursor: pointer;
+}
+
+button{
+    padding: 0.3rem;
+    background-color: darkgreen;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    margin-left: 1rem;
 }
 
 /* Utilities */
