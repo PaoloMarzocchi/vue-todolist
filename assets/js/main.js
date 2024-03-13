@@ -4,6 +4,7 @@ createApp({
     data() {
         return {
             addedItem: '',
+            errorMessage: false,
             todoList: [
                 {
                     text: 'Fare la spesa',
@@ -34,16 +35,18 @@ createApp({
         },
 
         addItem(){
-            
-            let newItem = {
-                text: this.addedItem,
-                done: false
+            if(this.addedItem.length > 2){
+                let newItem = {
+                    text: this.addedItem,
+                    done: false
+                }
+                this.todoList.unshift(newItem);
+                console.log(this);
+                this.addedItem = '';
+                this.errorMessage = '';
+            }else{
+                this.errorMessage = 'Error! Digita almeno 3 caratteri'
             }
-            this.todoList.unshift(newItem);
-            console.log(this);
-            this.addedItem = '';
-            
-            
         }
     },
     mounted(){
